@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.3",
+    "@sentry/tracing": "^7.15.0",
+    "@sentry/vue": "^7.15.0",
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
     "gsap": "^3.11.3",
