@@ -5,14 +5,27 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
+    "@cypress/vue": "^3.1.0",
+    "@cypress/webpack-dev-server": "^2.4.1",
+    "autoprefixer": "^10",
     "core-js": "^3.8.3",
+    "cypress": "^10.10.0",
+    "pinia": "^2.0.23",
+    "postcss": "^8",
+    "tailwindcss": "^3",
     "vue": "^3.2.13",
+    "vue-i18n": "^9.1.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@intlify/vue-i18n-loader": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",
@@ -21,13 +34,24 @@
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
+    "multiple-cucumber-html-reporter": "^3.0.1",
     "prettier": "^2.4.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "vue-cli-plugin-i18n": "~2.3.1",
+    "vue-cli-plugin-tailwind": "~3.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "json": {
+      "enabled": true,
+      "output": "logs/log.json"
+    }
   }
 }

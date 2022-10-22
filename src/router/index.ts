@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import CVView from "../views/CVView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/cv",
+    name: "cv",
+    component: CVView,
+    meta: { title: "CV page" },
   },
   {
     path: "/about",
