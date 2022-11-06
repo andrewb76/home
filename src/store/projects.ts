@@ -1,9 +1,9 @@
 // import { Ii18nText } from "./comonData";
 
-interface Ii18nString {
-  ru: string;
-  en: string;
+export interface Ii18nString {
+  [lang: string]: string;
 }
+
 export interface IProject {
   key: string;
   country: string;
@@ -18,78 +18,7 @@ export interface IProject {
   techStack: string[];
 }
 
-export const projects: IProject[] = [
-  //  1994
-  {
-    key: "mz_chernobyl",
-    country: "ua",
-    short: "Chernobyl",
-    img: "mz_chernobyl.png",
-    title: {
-      ru: "Система учета пострадавших от Чернобыльской аварии",
-      en: "",
-    },
-    description: {
-      ru: `Система учета пострадавших от Чернобыльской аварии проживающих на территории Крымской республики.
-      Изначально учет велся на бумажных картах, в зоне моей ответственности было автоматизировать этот процесс
-      и наладить переодическую отправку данных в главный ИЦ. Под бдительным глазом старших товарищей
-      я разработал схему БД и написал рабочее место оператора для занесения данных в базу.
-      Также раз в неделю я передавал свежие данные в Киев по протоколу UUPC и dialUp соединению.
-      Работа с базой осуществлялась библиотекой codebase, а пользовательский интерфейс был реализован через библиотеку turbovision`,
-      en: `A platform for building a multi-level referral network,
-      with a flexibly customizable system for distributing input funds according to the tree of participants.
-      A system for registering victims of the Chernobyl accident living on the territory of the Crimean Republic.
-      Initially, records were kept on paper cards, it was my responsibility to automate this process
-      and set up periodic sending of data to the main information center. Under the watchful eye of senior comrades
-      I developed a database schema and wrote an operator's workplace for entering data into the database.
-      Also, once a week I sent fresh data to Kyiv via the UUPC protocol and a dialUp connection.
-      The work with the base was carried out by the codebase library, and the user interface was implemented through the turbovision library`,
-    },
-    techStack: ["c", "turbovision", "dBase3"],
-    from: new Date(1994, 1),
-    to: new Date(1997, 1),
-  },
-  //  1995
-  //  1996
-  {
-    key: "mz_gl_book",
-    country: "ua",
-    img: "mz_chernobyl.png",
-    short: "Menu Calc",
-    title: {
-      ru: "Меню - раскладка",
-      en: "",
-    },
-    description: {
-      ru: "Меню - раскладка. Программа для составления меню и расчета объемов закупки продуктов в санаториях принадлежащих министерству здравоохранения Крыма",
-      en: "Menu, layout. A program for compiling menus and calculating the volume of purchases of products in sanatoriums belonging to the Ministry of Health of Crimea",
-    },
-    techStack: ["c", "turbovision", "dBase3"],
-    from: new Date(1995, 8),
-    to: new Date(1997, 1),
-  },
-  //  1997
-  {
-    key: "ed_tnu",
-    country: "ua",
-    img: "ed_tnu.png",
-    short: "TNU",
-    title: {
-      ru: "Обучение в Таврическом Национальном Университете",
-      en: "Crimean National University",
-    },
-    description: {
-      ru: `В 1997 поступил в Таврический национальный университет им. В.И.Вернадского
-      на кафедру финансы и кредит экономического факультета.
-      Закончил с дипломом специалиста в 2002 году.`,
-      en: `In 1997 entered the Vernadsky Tauride National University
-      at the Department of Finance and Credit of the Faculty of Economics.
-      Graduated with a specialist diploma in 2002.`,
-    },
-    techStack: [],
-    from: new Date(1997, 2),
-    to: new Date(2001, 6),
-  },
+export const certificates: IProject[] = [
   {
     key: "cu_mongo",
     country: "us",
@@ -148,7 +77,7 @@ export const projects: IProject[] = [
     key: "cu_codecamp_data_visualization",
     country: "us",
     img: "cu_codecamp_data_visualization.png",
-    url: "https://www.freecodecamp.com/andrewb76/front-end-certification",
+    url: "https://www.freecodecamp.org/certification/andrewb76/data-visualization",
     short: "Data Vis",
     title: {
       ru: "CodeCamp",
@@ -163,13 +92,154 @@ export const projects: IProject[] = [
     to: new Date(2022, 10),
   },
   {
+    key: "cu_codecamp_js",
+    country: "us",
+    img: "cu_codecamp_js.png",
+    url: "https://freecodecamp.org/certification/andrewb76/javascript-algorithms-and-data-structures",
+    short: "JS Algorithms",
+    title: {
+      ru: "CodeCamp",
+      en: "CodeCamp",
+    },
+    description: {
+      ru: `JavaScript Алгоритмы и Структуры Данных`,
+      en: `JavaScript Algorithms and Data Structures`,
+    },
+    techStack: ["js"],
+    from: new Date(2022, 9),
+    to: new Date(2022, 9),
+  },
+  {
+    key: "cu_codecamp_front_lib",
+    country: "us",
+    img: "cu_codecamp_front_lib.png",
+    url: "https://freecodecamp.org/certification/andrewb76/front-end-development-libraries",
+    short: "CodeCamp FE Lib",
+    title: {
+      ru: "CodeCamp",
+      en: "CodeCamp",
+    },
+    description: {
+      ru: `Библиотеки для Фронт Разработки`,
+      en: `Front End Development Libraries`,
+    },
+    techStack: ["sass", "jquery", "react", "redux", "bootstrap"],
+    from: new Date(2022, 1),
+    to: new Date(2022, 4),
+  },
+  {
+    key: "cu_tau_automation_with_git",
+    country: "us",
+    img: "cu_tau_automation_with_git.png",
+    url: "https://testautomationu.applitools.com/certificate/?id=3957c319",
+    short: "Automation with GIT",
+    title: {
+      ru: "TestAutomationUniversity",
+      en: "TestAutomationUniversity",
+    },
+    description: {
+      ru: `Git в автоматизации тестирования`,
+      en: `Source Control for Test Automation with Git`,
+    },
+    techStack: ["git"],
+    from: new Date(2022, 10),
+    to: new Date(2022, 10),
+  },
+  {
+    key: "cu_ml_docker",
+    country: "us",
+    img: "cu_ml_docker.png",
+    url: "https://www.mindluster.com/student/certificate/718402762",
+    short: "Exploring Docker",
+    title: {
+      ru: "Mind Luster",
+      en: "Mind Luster",
+    },
+    description: {
+      ru: `Изучение Docker`,
+      en: ` Exploring Docker`,
+    },
+    techStack: ["docker"],
+    from: new Date(2022, 10),
+    to: new Date(2022, 10),
+  },
+];
+export const projects: IProject[] = [
+  {
+    key: "mz_chernobyl",
+    country: "ua",
+    short: "Chernobyl",
+    img: "mz_chernobyl.png",
+    title: {
+      ru: "Система учёта пострадавших от Чернобыльской аварии",
+      en: "The system of medical registration of victims of the Chernobyl accident",
+    },
+    description: {
+      ru: `Система учета пострадавших от Чернобыльской аварии проживающих на территории Крымской республики.
+      Изначально учет велся на бумажных картах, в зоне моей ответственности было автоматизировать этот процесс
+      и наладить переодическую отправку данных в главный ИЦ. Под бдительным глазом старших товарищей
+      я разработал схему БД и написал рабочее место оператора для занесения данных в базу.
+      Также раз в неделю я передавал свежие данные в Киев по протоколу UUPC и dialUp соединению.
+      Работа с базой осуществлялась библиотекой codebase, а пользовательский интерфейс был реализован через библиотеку turbovision`,
+      en: `A platform for building a multi-level referral network,
+      with a flexibly customizable system for distributing input funds according to the tree of participants.
+      A system for registering victims of the Chernobyl accident living on the territory of the Crimean Republic.
+      Initially, records were kept on paper cards, it was my responsibility to automate this process
+      and set up periodic sending of data to the main information center. Under the watchful eye of senior comrades
+      I developed a database schema and wrote an operator's workplace for entering data into the database.
+      Also, once a week I sent fresh data to Kyiv via the UUPC protocol and a dialUp connection.
+      The work with the base was carried out by the codebase library, and the user interface was implemented through the turbovision library`,
+    },
+    techStack: ["c", "turbovision", "dBase3"],
+    from: new Date(1994, 1),
+    to: new Date(1997, 1),
+  },
+  {
+    key: "mz_gl_book",
+    country: "ua",
+    img: "mz_chernobyl.png",
+    short: "Menu Calc",
+    title: {
+      ru: "Министерство Здравоохранения Крыма, Меню - раскладка",
+      en: "Ministry of Health of Crimea, Menu-Layout",
+    },
+    description: {
+      ru: "Меню - раскладка. Программа для составления меню и расчета объемов закупки продуктов в санаториях принадлежащих министерству здравоохранения Крыма",
+      en: "Menu/Layout. A program for compiling menus and calculating the volume of purchases of products in sanatoriums belonging to the Crimean Healthcare department",
+    },
+    techStack: ["c", "turbovision", "dBase3"],
+    from: new Date(1995, 8),
+    to: new Date(1997, 1),
+  },
+  {
+    key: "ed_tnu",
+    country: "ua",
+    img: "ed_tnu.png",
+    short: "TNU",
+    title: {
+      ru: "Обучение в Таврическом Национальном Университете",
+      en: "Lerning in the Crimean National University",
+    },
+    description: {
+      ru: `В 1997 поступил в Таврический национальный университет им. В.И.Вернадского
+      на кафедру финансы и кредит экономического факультета.
+      Закончил с дипломом специалиста в 2002 году.`,
+      en: `In 1997 entered the Vernadsky Tauride National University
+      at the Department of Finance and Credit of the Faculty of Economics.
+      Graduated with a specialist diploma in 2002.`,
+    },
+    techStack: [],
+    from: new Date(1997, 2),
+    to: new Date(2001, 6),
+  },
+  {
     key: "oup_1c",
     country: "en",
     img: "1c.png",
     short: "OUP Ukraine",
     title: {
-      ru: "",
-      en: "",
+      ru: "Предстовительство Oxford University Press в Украине",
+      en: "Agency of Oxford University Press in Ukraine",
     },
     description: {
       ru: "Программа по учету командировочных расходов на С, Cистема приёма и обработки заказов и складского учета на 1С",
@@ -179,16 +249,14 @@ export const projects: IProject[] = [
     from: new Date(1997, 2),
     to: new Date(2001, 6),
   },
-  //  1998
-  //  1999
   {
     key: "1c_ozenbash",
     country: "ru",
     img: "1c.png",
     short: "1C Ozenbash",
     title: {
-      ru: "",
-      en: "",
+      ru: "Автоматиация складского учета в небольшой торговой компании",
+      en: "Automation of warehouse accounting in a small trading company",
     },
     description: {
       ru: `Поддержка IT инфраструктуры небольшой оптовой торговой фирмы, доработка ПО под нужды бизнеса.`,
@@ -199,29 +267,9 @@ export const projects: IProject[] = [
     to: new Date(2002, 9),
   },
   {
-    key: "1c_victoria_vita",
-    country: "ru",
-    img: "1c.png",
-    short: "1C VictoriaVita",
-    title: {
-      ru: "Автоматизация бизнес процессов торговой компании",
-      en: "Automation of business processes of a trading company",
-    },
-    description: {
-      ru: `Поддержка IT инфраструктуры небольшой оптовой торговой фирмы, доработка ПО под нужды бизнеса.`,
-      en: `Support for the IT infrastructure of a small wholesale trading company, software development for the needs of the business.`,
-    },
-    techStack: ["1c"],
-    from: new Date(2001, 1),
-    to: new Date(2003, 1),
-  },
-  //  2000
-  //  2001
-
-  {
-    key: "sn_trafic_control",
+    key: "sn_traffic_control",
     country: "ua",
-    img: "sn_trafic_control.png",
+    img: "sn_traffic_control.png",
     short: "TraficControl",
     title: {
       ru: "Система учета и реализации интернет трафика",
@@ -241,7 +289,23 @@ export const projects: IProject[] = [
     from: new Date(2001, 6),
     to: new Date(2002, 4),
   },
-  //  2002
+  {
+    key: "1c_victoria_vita",
+    country: "ru",
+    img: "1c.png",
+    short: "1C VictoriaVita",
+    title: {
+      ru: "Автоматиация складского учета в небольшой торговой компании",
+      en: "Automation of warehouse accounting in a small trading company",
+    },
+    description: {
+      ru: `Поддержка IT инфраструктуры небольшой оптовой торговой фирмы, доработка ПО под нужды бизнеса.`,
+      en: `Support for the IT infrastructure of a small wholesale trading company, software development for the needs of the business.`,
+    },
+    techStack: ["1c"],
+    from: new Date(2001, 1),
+    to: new Date(2003, 1),
+  },
   {
     key: "1c_pioner",
     country: "ua",
@@ -261,17 +325,14 @@ export const projects: IProject[] = [
     from: new Date(2002, 4),
     to: new Date(2003, 1),
   },
-
-  //  2003
-  //  2004
   {
     key: "1c_palas",
     country: "ua",
     short: "1C Palas",
     img: "1c.png",
     title: {
-      ru: "",
-      en: "",
+      ru: 'Network of building supermarkets "Palace"',
+      en: 'Network of building supermarkets "Palace"',
     },
     description: {
       ru: `Сеть супермаркетов на территории Украины специализирующихся на торговле напольными покрытиями и сопутствующими товарами.
@@ -283,15 +344,14 @@ export const projects: IProject[] = [
     from: new Date(2003, 1),
     to: new Date(2004, 3),
   },
-  //  2005
   {
     key: "1c_B&G",
     country: "ua",
     img: "1c.png",
     short: "1C B&G",
     title: {
-      ru: "",
-      en: "",
+      ru: "B&G Group",
+      en: "B&G Group",
     },
     description: {
       en: `Large regional FMCG distributor with a large network of retail stores and a transport and logistics company.
@@ -311,42 +371,24 @@ export const projects: IProject[] = [
     img: "1c.png",
     techStack: ["1c", "aeroflotAPI"],
     title: {
-      ru: "",
-      en: "",
+      ru: "Туристическое агенство",
+      en: "Travel agency",
     },
     description: {
-      ru: `Разработка модуля резервирования и покупки авиабилетов на базе 1Сб для туристического агентства`,
-      en: `Development of a module for booking and purchasing tickets based on 1C, for a travel agency, support and maintenance of the system.`,
+      ru: `Разработка и сопровождение модуля резервирования и покупки авиабилетов на базе 1Сб для туристического агентства`,
+      en: `Development and support of a module for booking and purchasing tickets based on 1C, for a travel agency, support and maintenance of the system.`,
     },
     from: new Date(2005, 4),
     to: new Date(2007, 5),
   },
-  // {
-  //   key: "1c_store",
-  // country: "ru",
-  //   short: "1C",
-  //   img: "1c.png",
-  //   techStack: ["1c"],
-  // title: {
-  //   ru: "",
-  //   en: "",
-  // },//
-  // description: {
-  //     ru: ``,
-  //     en: ``,
-  //   },
-  //   from: new Date(2005, 1),
-  //   to: new Date(2006, 1),
-  // },
-  //  2006
   {
     key: "fr_massandra",
     country: "ru",
     img: "fr_massandra.png",
     short: "Massandra market",
     title: {
-      ru: "",
-      en: "",
+      ru: "Интернет магазин Массандровских вин",
+      en: "Massandra wine internet market",
     },
     description: {
       ru: `Интернет магазин вина из коллекции "Массандра", Сделал для себя, как проба пера в новых на тот момент для меня web технологиях,
@@ -358,25 +400,27 @@ export const projects: IProject[] = [
     from: new Date(2006, 1),
     to: new Date(2006, 5),
   },
-  //  2007
   {
     key: "1c_koktebel",
     country: "ua",
     img: "1c_koktebel.png",
     short: "1C Koktebel",
     title: {
-      ru: "",
-      en: "",
+      ru: 'Коньячный завод "Коктебель"',
+      en: 'Brandy factory "Koktebel"',
     },
     description: {
-      ru: `Внедрение системы управления производством  в П`,
-      en: ``,
+      ru: `Большой проект, доработка и внедрение системы управления предприятием
+      на базе конфигурации "1С Производство" на заводе "Коктебель". Автоматицация бухгалтерии,
+      учет ГСМ и транспотрного парка, учет по с/х и виноградникам. Работа велась на территории завода коммандой из 10ти человек.`,
+      en: `Large project for "Koktebel" factory. Implement enterprise management system based on the configuration "1C ERP".
+      Adopting to business requirements from different factory departments like: logistic, accounting department,  transport park,
+      agriculture and vineyards. The work was carried out on the territory of the plant by a team of 10 people.`,
     },
     techStack: ["1c"],
     from: new Date(2004, 5),
     to: new Date(2005, 2),
   },
-  //  2008
   {
     key: "nv_link_trade",
     country: "ua",
@@ -446,8 +490,8 @@ export const projects: IProject[] = [
     img: "nv_forumok.png",
     url: "https://forumok.com/",
     title: {
-      ru: "",
-      en: "",
+      ru: "Форумок Маркетинг/СЕО сервис",
+      en: "Forumok Marketing/SEO service",
     },
     description: {
       ru: `Форумок - комплексная система продвижения товаров и услуг в социальных сервисах рунета: форумы, Twitter, ВКонтакте,
@@ -472,15 +516,14 @@ export const projects: IProject[] = [
     from: new Date(2009, 1),
     to: new Date(2010, 6),
   },
-  //  2009
   {
     key: "nv_video preview_builder",
     country: "ua",
     img: "nv_video_preview_builder.png",
     short: "Video tools",
     title: {
-      ru: "",
-      en: "",
+      ru: "Сервис обработки видео",
+      en: "Video processing service",
     },
     description: {
       ru: `Админ-модуль для подготовки CD/DVD фильмов для заливки на видео хостинг.
@@ -498,8 +541,8 @@ export const projects: IProject[] = [
     img: "nv_anti_bot.png",
     short: "TrafficQuality",
     title: {
-      ru: "",
-      en: "",
+      ru: "TrafficTrade детектор накрутки трафика",
+      en: "TrafficTrade traffic bot detector",
     },
     description: {
       ru: `Сервис оценки качества покупаемого трафика. Часть более крупной системы по покупке продаже трафика.
@@ -511,16 +554,14 @@ export const projects: IProject[] = [
     from: new Date(2010, 1),
     to: new Date(2010, 12),
   },
-  //  2010
-  //  2011
   {
     key: "am_frankfurt",
     country: "dm",
     img: "am_frankfurt.png",
     short: "Parking API",
     title: {
-      ru: "",
-      en: "",
+      ru: "Интеграция Апи паркинга на сайте аэропорта",
+      en: "Implementing ParkingAPI on airport site.",
     },
     description: {
       en: `Web interface for booking parking slots, integration with API for Frankfurt airport`,
@@ -530,16 +571,6 @@ export const projects: IProject[] = [
     from: new Date(2011, 1),
     to: new Date(2011, 7),
   },
-
-  //  2012
-
-  //  2013
-  //  2014
-  //  2015
-  //  2016
-  //  2017
-  //  2018
-  //  2019
   {
     key: "sf_bstow",
     country: "us",
@@ -547,8 +578,8 @@ export const projects: IProject[] = [
     short: "Bstow",
     url: "https://bstow.com",
     title: {
-      ru: "",
-      en: "",
+      ru: "Bstow, SPA приложение для сборов в благотворительные организации",
+      en: "Bstow, white labeling SPA for donation to charity organization",
     },
     description: {
       ru: `bstow Одностраничное приложение, которое позволяет пользователям делать пожертвования различным некоммерческим организациям,
@@ -578,14 +609,17 @@ export const projects: IProject[] = [
     country: "us",
     short: "Profitability",
     title: {
-      ru: "",
-      en: "",
+      ru: "Расчет доходности компании/проектов/сотрудников",
+      en: "Calculation of profitability of the company/projects/employees",
     },
     description: {
-      ru: `Внутренняя система распределения затрат и мониторинга прибыльности компании в разрезе (подразделение / проект / сотрудник).
-      Система консолидировала данные по затратам в разрезе проектов, просчитывала себестоимость и доходность проектов,
-      также используя данные от сервиса бронирования разработчиков делался прогноз на следующий месяц`,
-      en: ``,
+      ru: `Внутренняя система мониторинга прибыльности компании в разрезе (подразделение / проект / сотрудник).
+      Система консолидировала данные из разных используемых компанией сервисов отвечающих за разные аспекты бизнеса.
+      Типа планирование людских ресурсов,
+      управление проектами, трекер задач, персональные расчеты, расчеты с клиентами, затраты на офисы и т.д.`,
+      en: `Internal system for monitoring the profitability of the company in the context (division / project / employee).
+      The system consolidated data from different services used by the company responsible for different aspects of the business.
+      Types of human resources planning, project management, task tracker, personal accounts, accounts with clients, office costs, etc.`,
     },
     techStack: [
       "mongodb",
@@ -609,8 +643,8 @@ export const projects: IProject[] = [
     img: "sf_frogio.png",
     short: "Frogio",
     title: {
-      ru: "",
-      en: "",
+      ru: "Frogio, социальная медиа платформа",
+      en: "Frogio, social media platform",
     },
     description: {
       en: "A social media platform showcasing unique things about your city",
@@ -634,8 +668,8 @@ export const projects: IProject[] = [
     short: "American Certified",
     img: "sf_americancertified.png",
     title: {
-      ru: "",
-      en: "",
+      ru: "American Certified, торговая площадка",
+      en: "American Certified, marketplace",
     },
     description: {
       ru: `American Certified — ваш поставщик всего, что сделано в Америке, и активный участник движения за сознательное потребление.
@@ -660,8 +694,8 @@ export const projects: IProject[] = [
     img: "sf_safetytag.png",
     short: "Safetytag",
     title: {
-      ru: "",
-      en: "",
+      ru: "Safetytag, Проект призванный улучшить качество медицинской помощи за счет своевременного предоставления критически важной информации о поцеенте",
+      en: "Safetytag, A project designed to improve the quality of care through the timely provision of critical information about the patient",
     },
     description: {
       en: `A SaaS platform that addresses a problem in youth sports today,
@@ -693,8 +727,8 @@ export const projects: IProject[] = [
     img: "sf_maeus.png",
     short: "Maeus",
     title: {
-      ru: "",
-      en: "",
+      ru: "Maeus, сервис для музыкантов",
+      en: "Maeus, service for musicians",
     },
     description: {
       ru: `Maeus — это музыкальное приложение, которое помогает людям находить новых исполнителей.
@@ -721,8 +755,8 @@ export const projects: IProject[] = [
     short: "YADSA",
     url: "https://apkpure.com/yadsa-digital-service-market/com.zelantsoft.yadsa",
     title: {
-      ru: "",
-      en: "",
+      ru: "YADSA, Возможность заработать Bitcoins за участие в платных опросах",
+      en: "YADSA, Participation in paid surveys, and get Bitcoins",
     },
     description: {
       en: `You play for real Bitcoin. The point of the game is
@@ -745,11 +779,11 @@ export const projects: IProject[] = [
     img: "sf_sport_baseball.png",
     short: "Sport Apps",
     title: {
-      ru: "",
-      en: "",
+      ru: "Прилошения Спортивной Статистики",
+      en: "Sport Statistics Apps",
     },
     description: {
-      en: `Assisted "One Two See" development team with a UI engineering effort and QA.`,
+      en: `Assisted "One Two See" development team with a UI engineering effort and QA. (football, basketball, baseball,...)`,
       ru: `Разработка UI с отображением статистики для серии спортивных приложений (футбол, баскетбол, бейсбол,...)
       для компании "One Two See"`,
     },
@@ -765,8 +799,8 @@ export const projects: IProject[] = [
     short: "Logical Living",
     url: "https://logical-living.com",
     title: {
-      ru: "",
-      en: "",
+      ru: "Logical Living — green стартап",
+      en: "Logical Living — green startup",
     },
     description: {
       en: `Logical Living is a startup that wants to make it easy for people to live more green.`,
@@ -782,8 +816,8 @@ export const projects: IProject[] = [
     img: "sf_united_air.png",
     short: "UnitedAir Simulator",
     title: {
-      ru: "",
-      en: "",
+      ru: "United Airline Simulator",
+      en: "United Airline Simulator",
     },
     description: {
       en: `United Airline Simulator. When a major US airline needed to overhaul their internal training system,
@@ -805,8 +839,8 @@ export const projects: IProject[] = [
     img: "sf_dlux.png",
     short: "Dlux",
     title: {
-      ru: "",
-      en: "",
+      ru: "Dlux SaaS платформа",
+      en: "Dlux SaaS platform",
     },
     description: {
       en: `Building lighting management SaaS for Dlux company.
@@ -835,8 +869,8 @@ export const projects: IProject[] = [
     country: "us",
     short: "Higher Next",
     title: {
-      ru: "",
-      en: "",
+      ru: "Higher Next, 'экзаменационная платформа'",
+      en: "Higher Next, proctoring platform",
     },
     description: {
       en: `We designed and developed a comprehensive, interactive, masonry-style help system for a Java applet-based proctoring app.
@@ -849,36 +883,13 @@ export const projects: IProject[] = [
     to: new Date(2016, 1),
   },
   {
-    key: "sf_proctor_u",
-    country: "us",
-    img: "sf_proctor_u.png",
-    short: "ProctorU",
-    title: {
-      ru: "",
-      en: "",
-    },
-    description: {
-      en: `HigherNext is an testing platform for academic testing, licensing it"s innovative solution
-      (test administration, online proctoring, certification) to existing tests and certifications.
-      The flagship product is a standardized business skills exam, which enables entry level job applicants
-      to demonstrate their skills in key business subject areas in a uniform and measurable way to employers.`,
-      ru: `HigherNext — платформа для академического тестирования, лицензирование инновационного решения.
-      (администрирование тестов, онлайн-прокторинг, сертификация) к существующим тестам и сертификатам.
-      Флагманский продукт — это стандартизированный экзамен по деловым навыкам, который позволяет кандидатам на работу начального уровня
-      демонстрировать работодателям свои навыки в ключевых предметных областях бизнеса единообразным и измеримым образом.`,
-    },
-    techStack: ["drupal", "mysql", "php", "git"],
-    from: new Date(2014, 1),
-    to: new Date(2015, 1),
-  },
-  {
     key: "sf_info_wall",
     country: "us",
     img: "sf_infowall.png",
     short: "Infowall",
     title: {
-      ru: "",
-      en: "",
+      ru: "Infowall, легковесная СМS",
+      en: "Infowall, A lightweight CMS",
     },
     description: {
       en: `A lightweight CMS, designed with the entry-level computer user in mind,
@@ -901,13 +912,36 @@ export const projects: IProject[] = [
     to: new Date(2015, 6),
   },
   {
+    key: "sf_proctor_u",
+    country: "us",
+    img: "sf_proctor_u.png",
+    short: "ProctorU",
+    title: {
+      ru: "ProctorU, экзаменационная платформа",
+      en: "ProctorU, proctoring platform",
+    },
+    description: {
+      en: `HigherNext is an testing platform for academic testing, licensing it"s innovative solution
+      (test administration, online proctoring, certification) to existing tests and certifications.
+      The flagship product is a standardized business skills exam, which enables entry level job applicants
+      to demonstrate their skills in key business subject areas in a uniform and measurable way to employers.`,
+      ru: `HigherNext — платформа для академического тестирования, лицензирование инновационного решения.
+      (администрирование тестов, онлайн-прокторинг, сертификация) к существующим тестам и сертификатам.
+      Флагманский продукт — это стандартизированный экзамен по деловым навыкам, который позволяет кандидатам на работу начального уровня
+      демонстрировать работодателям свои навыки в ключевых предметных областях бизнеса единообразным и измеримым образом.`,
+    },
+    techStack: ["drupal", "mysql", "php", "git"],
+    from: new Date(2014, 1),
+    to: new Date(2015, 1),
+  },
+  {
     key: "sf_spa_standard",
     country: "us",
     img: "sf_spa-standard.png",
     short: "SPA Standard",
     title: {
-      ru: "",
-      en: "",
+      ru: "SPA Standard, e-commerce",
+      en: "SPA Standard, e-commerce",
     },
     description: {
       en: `Spa Standard is an educational community site with e-commerce elements,
@@ -926,8 +960,8 @@ export const projects: IProject[] = [
     img: "sf_sparkdsg.png",
     url: "https://sparkdsg.com/",
     title: {
-      ru: "",
-      en: "",
+      ru: "Spark DSG, сайт компании",
+      en: "Spark DSG, company site",
     },
     description: {
       en: `Spark DSG is a team of experienced designers and information architects who specialize in online consumer experiences
@@ -939,20 +973,33 @@ export const projects: IProject[] = [
     from: new Date(2016, 1),
     to: new Date(2017, 1),
   },
-
-  //  2020
-  //  2021
-  //  2022
-  //  2023
-
+  {
+    key: "sf_int_redmine_plugin",
+    country: "us",
+    img: "sf_int_redmine_plugin.png",
+    short: "Redmine plugin",
+    techStack: ["ruby", "rubyonrails", "redmineAPI", "git", "gitlab"],
+    title: {
+      ru: "TimeTraking integration Redmine plugin",
+      en: "Redmine плагин интеграции контроля времени",
+    },
+    description: {
+      ru: `Внутренний проект, плагин для redmine,
+      добавляющий веб хуки на события логирования времени и других манипуляций с затреканными часами`,
+      en: `Internel project, redmine plugin,
+      adding web hooks for time logging events and other manipulations with time entries`,
+    },
+    from: new Date(2018, 1),
+    to: new Date(2018, 12),
+  },
   {
     key: "bh_printer_monitor",
     country: "ru",
     img: "bh_printers.png",
     short: "Printer monitor",
     title: {
-      ru: "",
-      en: "",
+      ru: "Remote Printers monitiring platform",
+      en: "Система удаленного контроля принтеров",
     },
     description: {
       ru: `Система удаленного мониторинга состояния принтеров для компании по их обслуживанию. Система состоит из центрального сервера и сети мониторов.
@@ -995,8 +1042,8 @@ export const projects: IProject[] = [
     img: "bh_media_morph.png",
     short: "Media Morph",
     title: {
-      ru: "",
-      en: "",
+      ru: "Media Morph, сервис пакетной видеообработки",
+      en: "Media Morph, batch media transform service",
     },
     description: {
       ru: `Сервис по автоматизированной обработке видеофайлов, Система позволяет создавать шаблоны обработки видео с помощью ffmpeg. Пользователь привязывал к аккаунту
@@ -1032,8 +1079,8 @@ export const projects: IProject[] = [
     short: "MagicFlix",
     img: "bh_magicflix.png",
     title: {
-      ru: "",
-      en: "",
+      ru: "MagicFlix, videohosting for magicians",
+      en: "MagicFlix, видеохостинг для фокусников",
     },
     description: {
       en: `Thematic video streaming platform with modules for user management, content management, subscriptions and recurring payments, billing, input-output module,
@@ -1074,8 +1121,8 @@ export const projects: IProject[] = [
     img: "bh_novi.png",
     short: "Novi",
     title: {
-      ru: "",
-      en: "",
+      ru: "Novi, движок финансовой пирамиды",
+      en: "Novi, pyramid scheme engine",
     },
     description: {
       ru: `Платформа для построения многоуровневой реферальной сети, с гибко настраиваемой системой распределения зашедших средств по дереву участников`,
@@ -1108,8 +1155,8 @@ export const projects: IProject[] = [
     img: "bh_rhino.png",
     short: "Rhino",
     title: {
-      ru: "",
-      en: "",
+      ru: "Rhino, мобильная стриминговая платформа",
+      en: "Rhino, mobile streaming platform",
     },
     description: {
       ru: `MVP стриминговой платформы, Кабинет пользователя, аудио и видео посты, поиск, подписка, лайки, чат,
@@ -1135,67 +1182,14 @@ export const projects: IProject[] = [
     from: new Date(2019, 11),
     to: new Date(2021, 1),
   },
-
-  {
-    key: "sf_int_redmine_plugin",
-    country: "us",
-    img: "sf_int_redmine_plugin.png",
-    short: "Redmine plugin",
-    techStack: ["ruby", "rubyonrails", "redmineAPI", "git", "gitlab"],
-    title: {
-      ru: "",
-      en: "",
-    },
-    description: {
-      ru: `Внутренний проект, плагин для redmine,
-      добавляющий веб хуки на события логирования времени и других манипуляций с затреканными часами`,
-      en: `Internel project, redmine plugin,
-      adding web hooks for time logging events and other manipulations with time entries`,
-    },
-    from: new Date(2018, 1),
-    to: new Date(2018, 12),
-  },
-  {
-    key: "sollers",
-    country: "ru",
-    img: "sollers.png",
-    short: "Tariff calculator",
-    title: {
-      ru: "",
-      en: "",
-    },
-    description: {
-      en: `I was engaged in the development and implementation of a service for calculating the tariff for leasing, as well as a service for messaging with clients, and also helped in the development of the frontend.`,
-      ru: `Занимался разработкой и внедрением сервиса расчета тарифа для лизинга, а также сервиса для обмена сообщениями с клиентами, помогал в разработке фронта.`,
-    },
-    techStack: [
-      "js",
-      "nodejs",
-      "nginx",
-      "postgresql",
-      "googleAPI",
-      "express",
-      "socketIo",
-      "vue",
-      "docker",
-      "k8s",
-      "helm",
-      "git",
-      "gitlab",
-      "rxjs",
-      "ramda",
-    ],
-    from: new Date(2020, 1),
-    to: new Date(2021, 11),
-  },
   {
     key: "bh_sirus_cams",
     country: "ru",
     img: "bh_sirus_cams.png",
     short: "Hardware project",
     title: {
-      ru: "",
-      en: "",
+      ru: "Верхнеуровневое API для оборудования",
+      en: "Top level hardware control API",
     },
     description: {
       en: `A service that allows you to use hardware from different manufacturers under a single contract.
@@ -1223,13 +1217,46 @@ export const projects: IProject[] = [
     to: new Date(2021, 11),
   },
   {
+    key: "sollers",
+    country: "ru",
+    img: "sollers.png",
+    short: "Tariff calculator",
+    title: {
+      ru: "B2B / B2С Платформа по аренде транспорта",
+      en: "B2B / B2С Vehicles leasing platform",
+    },
+    description: {
+      en: `I was engaged in the development and implementation of a service for calculating the tariff for leasing, as well as a service for messaging with clients, and also helped in the development of the frontend.`,
+      ru: `Занимался разработкой и внедрением сервиса расчета тарифа для лизинга, а также сервиса для обмена сообщениями с клиентами, помогал в разработке фронта.`,
+    },
+    techStack: [
+      "js",
+      "nodejs",
+      "nginx",
+      "postgresql",
+      "googleAPI",
+      "express",
+      "socketIo",
+      "vue",
+      "docker",
+      "k8s",
+      "helm",
+      "git",
+      "gitlab",
+      "rxjs",
+      "ramda",
+    ],
+    from: new Date(2020, 1),
+    to: new Date(2021, 11),
+  },
+  {
     key: "potok",
     country: "ru",
     img: "potok.png",
     short: "Potok",
     title: {
-      ru: "",
-      en: "",
+      ru: "B2C Кредитный Сервис",
+      en: "B2C Lending Service",
     },
     description: {
       en: `Investment platform. Worked in a team of 6 people on project services that responsible for the "investor's office",
@@ -1254,42 +1281,6 @@ export const projects: IProject[] = [
     ],
     from: new Date(2021, 11),
     to: new Date(2022, 9),
-  },
-  {
-    key: "cu_codecamp_js",
-    country: "us",
-    img: "cu_codecamp_js.png",
-    url: "https://freecodecamp.org/certification/andrewb76/javascript-algorithms-and-data-structures",
-    short: "JS Algorithms",
-    title: {
-      ru: "CodeCamp",
-      en: "CodeCamp",
-    },
-    description: {
-      ru: `JavaScript Алгоритмы и Структуры Данных`,
-      en: `JavaScript Algorithms and Data Structures`,
-    },
-    techStack: ["js"],
-    from: new Date(2022, 9),
-    to: new Date(2022, 9),
-  },
-  {
-    key: "cu_codecamp_front_lib",
-    country: "us",
-    img: "cu_codecamp_front_lib.png",
-    url: "https://freecodecamp.org/certification/andrewb76/front-end-development-libraries",
-    short: "CodeCamp FE Lib",
-    title: {
-      ru: "CodeCamp",
-      en: "CodeCamp",
-    },
-    description: {
-      ru: `Библиотеки для Фронт Разработки`,
-      en: `Front End Development Libraries`,
-    },
-    techStack: ["saas", "jquery", "react", "redux", "bootstrap"],
-    from: new Date(2022, 1),
-    to: new Date(2022, 4),
   },
 ];
 

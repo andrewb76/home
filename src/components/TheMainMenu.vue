@@ -12,13 +12,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
   name: "TheMainMenu",
   props: {
     links: {
-      type: Array,
+      type: Array as PropType<{ name: string; url: string; title: string }[]>,
       required: false,
       default: () => [{ name: "home", url: "/", title: "Home" }],
     },
