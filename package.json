@@ -47,7 +47,7 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-service": "^4.0.5",
     "@vue/eslint-config-typescript": "^9.1.0",
     "cqc": "^0.6.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
