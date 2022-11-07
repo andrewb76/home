@@ -1,5 +1,3 @@
-// import { Ii18nText } from "./comonData";
-
 export interface Ii18nString {
   [lang: string]: string;
 }
@@ -7,7 +5,7 @@ export interface Ii18nString {
 export interface IProject {
   key: string;
   country: string;
-  img?: string;
+  img: string;
   short: string;
   url?: string;
   title: Ii18nString;
@@ -607,6 +605,7 @@ export const projects: IProject[] = [
   {
     key: "sf_int_aggregation",
     country: "us",
+    img: "sf_profitability.png",
     short: "Profitability",
     title: {
       ru: "Расчет доходности компании/проектов/сотрудников",
@@ -867,6 +866,7 @@ export const projects: IProject[] = [
   {
     key: "sf_higher_next",
     country: "us",
+    img: "sf_higher_next.png",
     short: "Higher Next",
     title: {
       ru: "Higher Next, 'экзаменационная платформа'",
@@ -1037,7 +1037,7 @@ export const projects: IProject[] = [
     to: new Date(2021, 12),
   },
   {
-    key: "bh_media morph",
+    key: "bh_media_morph",
     country: "us",
     img: "bh_media_morph.png",
     short: "Media Morph",

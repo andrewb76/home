@@ -7,7 +7,7 @@
   />
   <div class="modal sm:modal-bottom md:modal-middle">
     <div class="modal-box flex flex-col">
-      <div class="box-content w-full grow flex flex-col md:flex-row">
+      <div class="box-content w-full flex grow flex-col md:flex-row">
         <div class="md:w-1/3">
           <a :href="`#projects-${nextProjectsIndex(projectsModalIndex)}`">
             <img
@@ -33,7 +33,7 @@
             {{ data[projectsModalIndex].to?.getFullYear() }}
           </div>
           <p
-            class="mt-2 p-2 text-gray-500 h-full overflow-auto max-h-56 text-justify"
+            class="mt-2 p-2 text-gray-500 h-full overflow-auto max-h-56 min-h-8 text-justify"
           >
             {{ data[projectsModalIndex].description[$i18n.locale] }}
           </p>
@@ -53,7 +53,7 @@
         <span
           v-for="index in data.length"
           :key="index"
-          class="projects-pager-item"
+          class="projects-pager-item cursor-pointer"
           :class="{
             'projects-pager-item--selected': projectsModalIndex === index - 1,
           }"
@@ -106,13 +106,11 @@ export default defineComponent({
 
     const route = useRoute();
     const routeHash = route.hash;
-    console.log(">>>", routeHash);
     if (routeHash.includes("-")) {
       const [key, val] = routeHash.split("-");
       if (key === "#projects") {
         projectsModalVisible.value = true;
         projectsModalIndex.value = parseInt(val || "0");
-        console.log("Open Project ", val, projectsModalVisible);
         router.replace({ path: "/" });
       }
     }

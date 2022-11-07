@@ -35,7 +35,7 @@
           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
         ></path>
       </svg>
-      <div class="flex group h-12 justify-evenly text-center">
+      <div class="flex group h-12 justify-center">
         <a target="_blank" :href="data.download.word.url[$i18n.locale]">
           <img
             class="w-16"

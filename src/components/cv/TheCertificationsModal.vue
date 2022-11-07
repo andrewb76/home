@@ -5,38 +5,31 @@
     :checked="certModalVisible"
     class="modal-toggle"
   />
-  <div class="modal modal-bottom sm:modal-middle min-w-min">
-    <div class="modal-box overflow-hidden">
-      <div class="flex w-full">
-        <div
-          @click="showCertMobile(prevCertIndex(certModalIndex), true)"
-          class="btn"
-        >
-          ❮
-        </div>
-        <div class="flex flex-col w-full p-1">
-          <a :href="data[certModalIndex].url" target="_blank">
-            <h3 class="text-sm">
-              {{ data[certModalIndex].description[$i18n.locale] }}
-            </h3>
-          </a>
-          <h2 class="text-base">
-            {{ data[certModalIndex].title[$i18n.locale] }}
-          </h2>
-        </div>
-        <div
-          @click="showCertMobile(nextCertIndex(certModalIndex), true)"
-          class="btn"
-        >
-          ❯
-        </div>
+  <div
+    class="modal modal-bottom sm:modal-middle min-w-min cursor-pointer"
+    @click="showCertMobile(0, false)"
+  >
+    <div class="modal-box overflow-hidden h-full flex flex-col min-h-min">
+      <div class="flex flex-col w-full p-1">
+        <a :href="data[certModalIndex].url" target="_blank">
+          <h3 class="text-sm">
+            &#128279;
+            <span class="underline">{{
+              data[certModalIndex].description[$i18n.locale]
+            }}</span>
+          </h3>
+        </a>
+        <h2 class="text-base">
+          {{ data[certModalIndex].title[$i18n.locale] }}
+        </h2>
       </div>
-      <div class="carousel w-full">
+      <div class="grow">
         <div click="showCertMobile(nextCertIndex(i-1), true)">
           <img
+            @click.stop="showCertMobile(nextCertIndex(certModalIndex), true)"
             :alt="data[certModalIndex].title[$i18n.locale]"
             :src="require(`@/assets/img/cert/${data[certModalIndex].img}`)"
-            class="w-full cert-img"
+            class="w-full cert-img cursor-pointer"
           />
         </div>
       </div>
@@ -54,8 +47,9 @@
 
       <ul class="flex justify-around my-10">
         <li v-for="index in data.length" :key="index">
-          <div @click="showCertMobile(index - 1, true)" class="cursor-pointer">
+          <div class="cursor-pointer">
             <img
+              @click.stop="showCertMobile(index - 1, true)"
               :src="
                 require(`@/assets/img/icons/certificate${
                   certModalIndex === index - 1 ? '-selected' : ''
@@ -68,8 +62,22 @@
           </div>
         </li>
       </ul>
-      <div @click="showCertMobile(0, false)" class="btn w-full">
-        {{ $t("common.close") }}
+      <div class="btn-group w-full self-end">
+        <div
+          @click.stop="showCertMobile(prevCertIndex(certModalIndex), true)"
+          class="btn"
+        >
+          ❮
+        </div>
+        <div @click.stop="showCertMobile(0, false)" class="btn grow">
+          {{ $t("common.close") }}
+        </div>
+        <div
+          @click.stop="showCertMobile(nextCertIndex(certModalIndex), true)"
+          class="btn"
+        >
+          ❯
+        </div>
       </div>
     </div>
   </div>
